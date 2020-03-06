@@ -17,7 +17,7 @@ class Deck
 
     suits.each do |suit|
       numbers.each do |number|
-        new_card = Card.new(suit: suit, value: number)
+        new_card = Card.new(suit: suit, card_value: number)
         add_card(new_card)
       end
     end
@@ -27,7 +27,7 @@ class Deck
 
   def print_cards
     @deck.each do |card|
-      puts "#{card.value.keys[0]} of #{card.suit}. Blackjack value is #{card.value.values[0]},"
+      puts "#{card.card_value.keys[0]} of #{card.suit}. Blackjack value is #{card.card_value.values[0]},"
     end
   end
 

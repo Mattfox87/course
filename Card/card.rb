@@ -1,9 +1,9 @@
 class Card
-  attr_accessor :suit, :value, :bj_value
+  attr_accessor :suit, :card_value
 
-  def initialize(suit:, value:)
+  def initialize(suit:, card_value:)
     @suit = suit
-    @value = value
+    @card_value = card_value
   end
 end
 
