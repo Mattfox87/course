@@ -12,8 +12,8 @@ class Deck
   end
 
   def build_deck
-    suits =["hearts","spades","clubs","diamonds"]
-    numbers = [{"Ace"=>1},{"2"=>2},{"3"=>3},{"4"=>4},{"5"=>5},{"6"=>6},{"7"=>7},{"8"=>8},{"9"=>9},{"10"=>10},{"Jack"=>10},{"Queen"=>10},{"King"=>10}]
+    suits =["Hearts","Spades","Clubs","Diamonds"]
+    numbers = [{"Ace"=>1},{"Two"=>2},{"Three"=>3},{"Four"=>4},{"Five"=>5},{"Six"=>6},{"Seven"=>7},{"Eight"=>8},{"Nine"=>9},{"Ten"=>10},{"Jack"=>10},{"Queen"=>10},{"King"=>10}]
 
     suits.each do |suit|
       numbers.each do |number|
@@ -21,9 +21,7 @@ class Deck
         add_card(new_card)
       end
     end
-  end
-
-  
+  end 
 
   def print_cards
     @deck.each do |card|
