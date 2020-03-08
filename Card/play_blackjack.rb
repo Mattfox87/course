@@ -1,11 +1,11 @@
 require './hand.rb'
 require './deck.rb'
+require './winner.rb'
 
 
 deck = Deck.new
 deck.build_deck
 deck.shuffle_cards
-deck.print_cards
 
 puts "Dealer's Face Card:"
 dealer_hand = Hand.new(deck: deck)
@@ -24,8 +24,14 @@ loop do
 
   if input == "H"
     player_hand.hit
+    if player_hand.total > 21
+      puts "Unlucky, dealer wins."
+      break
+    end
   else
-    player_hand.stand
-    break
+    player_hand.stand  
+    dealer_hand.dealer_turn 
+    check_winner = Winner.new(player: player_hand, dealer: dealer_hand)
+    check_winner.who_won
   end
 end
