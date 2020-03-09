@@ -37,7 +37,6 @@ class Hand
     @cards_held.each_index do |i|
       @total = @total + @cards_held[i].card_value.values[0]
     end
-    check_for_bust
   end
 
   def stand
@@ -45,11 +44,11 @@ class Hand
   end
 
   def dealer_initial_show
-    puts "---------------"  
+    puts ("-") * 40  
     puts "#{@cards_held[0].card_value.keys[0]} of #{@cards_held[0].suit}."
-    puts "---------------"
-    puts "Total: #{@cards_held[0].card_value.values[0]}"
-    puts "---------------"
+    puts ("-") * 40
+    puts "Total: #{@cards_held[0].card_value.values[0]}".rjust(40)
+    puts ("-") * 40
   end
 
   def dealer_turn
@@ -64,14 +63,15 @@ class Hand
 
 
   def show_hand
-    puts "---------------"
+    puts ("-") * 40
     @cards_held.each_index do |i|
       puts "#{@cards_held[i].card_value.keys[0]} of #{@cards_held[i].suit}."
     end
     calc_hand_total
-    puts "---------------"
-    puts "Total: #{@total}"
-    puts "---------------"
+    puts ("-") * 40
+    puts "Total: #{@total}".rjust(40)
+    puts ("-") * 40
+    check_for_bust
   end
 
 end
